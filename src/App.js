@@ -25,7 +25,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <Nav />
+      <Route path="/" component={Nav} />
     <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/auth/:form" component={Auth}/>
