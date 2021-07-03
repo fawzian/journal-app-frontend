@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import Test from "./components/Test"
+
+import React from "react";
 import {Switch, Route} from "react-router-dom";
 import Nav from "./components/nav";
 import Home from "./Pages/Home";
