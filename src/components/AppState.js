@@ -4,8 +4,17 @@ import React, { useContext , useReducer } from "react"
 const initialState = {
     url: "http://journal-backend-fn.herokuapp.com",
     token: null,
-    username: null
-}
+    username: null,
+    new: {
+        title: "",
+        body: "",       
+    },
+    edit: {
+        id: 0,
+        title: "",
+        body: "",
+    },
+};
 
 // reducer
 
@@ -17,9 +26,14 @@ const reducer = (state, action) => {
             return newState;
             break;
             case "logout":
-                newState = {...state, token: null, username: null}
-                window.localStorage.removeItem("auth")
-                return newState
+                newState = {...state, token: null, username: null};
+                window.localStorage.removeItem("auth");
+                return newState;
+                break;
+            case "appEntries":
+                newState = {...state, entries: action.payload};
+                return newState;
+                break;
         default:
             return state;
             break;
