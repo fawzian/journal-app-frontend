@@ -1,13 +1,28 @@
 
 import React from "react";
 import {Switch, Route} from "react-router-dom";
+import { useAppState } from "./components/AppState";
+
 import Nav from "./components/nav";
 import Home from "./Pages/Home";
 import Auth from "./Pages/Auth";
 import Dashboard from "./Pages/Dashboard";
 import './App.css';
 
-function App() {
+
+function App(props) {
+
+  const { state, dispatch } = useAppState();
+  React.useState(() => {
+    const auth = JSON.parse(window.localStorage.getItem("auth"))
+    if (auth) {
+      dispatch({type: "auth", payload: auth})
+      props.history.push("/dashboard")
+    } else {
+      props.history.push("/")
+    }
+  }, [])
+
   return (
     <div className="App">
       <Nav />

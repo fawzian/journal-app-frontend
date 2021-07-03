@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 import {AppState} from "./components/AppState.js"
 
 import reportWebVitals from './reportWebVitals';
@@ -11,9 +11,7 @@ ReactDOM.render(
   
     <AppState>
     <Router>
-    <React.StrictMode>
-    <App />
-    </React.StrictMode>
+    <Route path="/" component={App} />
     </Router>
     </AppState>
  ,
