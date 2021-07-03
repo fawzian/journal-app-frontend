@@ -5,13 +5,13 @@ const Auth = (props) => {
 
     const type = props.match.params.form
     const [formData, setFormData] = React.useState({
-        username:"",
-        password:""
+        username: "",
+        password: "",
     });
 
     const [userData, setUserData] = React.useState(null);
 
-    const {state, dispatch} = useAppState()
+    const {state, dispatch} = useAppState();
     console.log(state)
 
     React.useEffect(() => {
@@ -56,10 +56,10 @@ const Auth = (props) => {
         });
     };
      
-    return <div>
+    return <div className="auth">
         <form onSubmit={handleSubmit}>
             <input type="text" name="username" value={formData.username} onChange={handleChange}/>
-            <input type="text" name="password" value={formData.password} onChange={handleChange} />
+            <input type="password" name="password" value={formData.password} onChange={handleChange} />
             <input type="submit" value={type}/>
         </form>
     </div>
