@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppState } from "../components/AppState";
 import {Route, Link} from "react-router-dom";
-import { Form } from "../components/form"
+import Form  from "../components/form"
 
 
 const Dashboard = (props) => {
