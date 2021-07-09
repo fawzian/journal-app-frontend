@@ -14,8 +14,7 @@ const Form = (props) => {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
-                    Authroization: "bearer " + token 
-
+                    Authorization: "bearer " + token 
                 },
                     body: JSON.stringify(formData),
             }).then((response) => response.json());

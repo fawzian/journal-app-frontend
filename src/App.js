@@ -6,7 +6,7 @@ import { useAppState } from "./components/AppState";
 import Nav from "./components/nav";
 import Home from "./Pages/Home";
 import Auth from "./Pages/Auth";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Pages/Dashboard.jsx";
 import './App.css';
 
 

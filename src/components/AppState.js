@@ -5,7 +5,7 @@ const initialState = {
     url: "http://journal-backend-fn.herokuapp.com",
     token: null,
     username: null,
-    notes: null,
+    entries: null,
     new: {
         title: "",
         body: "",       
@@ -27,12 +27,12 @@ const reducer = (state, action) => {
             return newState;
             break;
         case "logout":
-                newState = {...state, token: null, username: null};
+                newState = { ...state, token: null, username: null };
                 window.localStorage.removeItem("auth");
                 return newState;
                 break;
         case "getEntries":
-            
+                console.log(action.payload);
                 newState = { ...state, entries: action.payload };
                 return newState;
                 break;
@@ -47,11 +47,13 @@ const AppContext = React.createContext(null)
 
 // app state component
 export const AppState = (props) => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    return <AppContext.Provider value={{state, dispatch}}>
+    return (
+    <AppContext.Provider value={{ state, dispatch }}>
         {props.children}
     </AppContext.Provider>
+    );
 }
 
 // use AppState hook
