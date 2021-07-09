@@ -44,6 +44,16 @@ const loaded = () => {
                 dispatch({type: "select", payload: entry})
                 props.history.push("/dashboard/edit")
             }}>Edit Journal Entry</button>
+
+<button onClick={() => {
+                fetch(url + "/entries/" + entry.id, {
+                    method: "delete",
+                    headers: {
+                        Authorization: "bearer " + token
+                    }
+                })
+                .then(() => getEntries());
+            }}>Delete Journal Entry</button>
             
         </div>)
     )}
