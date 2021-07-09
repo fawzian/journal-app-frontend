@@ -39,6 +39,12 @@ const loaded = () => {
         (<div className="entry" key={entry.id}>
             <h2>{entry.title}</h2>
             <h4>{entry.body}</h4>
+            
+            <button onClick={() => {
+                dispatch({type: "select", payload: entry})
+                props.history.push("/dashboard/edit")
+            }}>Edit Journal Entry</button>
+            
         </div>)
     )}
 </ul>

@@ -24,6 +24,7 @@ const Form = (props) => {
                 method: "put",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: "bearer " + token 
                 },
                     body: JSON.stringify(formData),
             }).then((response) => response.json());

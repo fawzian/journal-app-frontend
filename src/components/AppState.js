@@ -32,10 +32,14 @@ const reducer = (state, action) => {
                 return newState;
                 break;
         case "getEntries":
-                console.log(action.payload);
+                // console.log(action.payload);
                 newState = { ...state, entries: action.payload };
                 return newState;
                 break;
+        case "select":
+            newState = { ...state, edit: action.payload };
+            return newState;
+            break;
         default:
             return state;
             break;
