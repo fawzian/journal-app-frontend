@@ -7,29 +7,35 @@ import Form  from "../components/form"
 const Dashboard = (props) => {
 
 const {state, dispatch} = useAppState();
-const {token, url, entries, username} = state
+const {token, url, entries, username} = state;
 
 const getEntries = async () => {
-    const response = fetch(url + "/entries/")
+    const response = await fetch(url + "/entries/", {
+        method: "get",
+        headers: {
+            Authroization: "bearer " + token,
+        },
+    });
     const entries = (await response).json()
-    dispatch({type: "getEntries", payload: entries})
+    dispatch({ type: "getEntries", payload: entries })
 }
 
-React.useEffect(() => getEntries, [])
+React.useEffect(() => {getEntries()}, [])
 
 const loaded = () => (
     <div className="dashboard">
     <h1>{username}'s Journal Entries</h1>
     <Link to="/dashboard/new"><button>New Journal Entry</button></Link>
-    <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getEntries={getEntries}/>}/>
+    {/* <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getEntries={getEntries}/>
+}/> */}
     <ul>
-        {entries.map(entry => {
+        {/* {entries.map(entry => {
             <div className="entry" key={entry.id}>
                 <h2>{entry.title}</h2>
-                <h3>{entry.body}</h3>
+                <h4>{entry.body}</h4>
             </div>
         }
-            )}
+            )} */}
     </ul>
     </div>
 )

@@ -4,9 +4,9 @@ import { useAppState } from "../components/AppState"
 const Form = (props) => {
 
     const { state, dispatch} = useAppState();
-
-    const action = props.match.params.action
-    const [formData, setFormData] = React.useState(state[action])
+    const {token} = state;
+    const action = props.match.params.action;
+    const [formData, setFormData] = React.useState(state[action]);
 
     const actions = {
         new: () => {
@@ -14,6 +14,8 @@ const Form = (props) => {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
+                    Authroization: "bearer " + token 
+
                 },
                     body: JSON.stringify(formData),
             }).then((response) => response.json());

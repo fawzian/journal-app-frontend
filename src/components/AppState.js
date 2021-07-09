@@ -1,10 +1,11 @@
-import React, { useContext , useReducer } from "react"
+import React, { useContext , useReducer } from "react";
 
 // initial state
 const initialState = {
     url: "http://journal-backend-fn.herokuapp.com",
     token: null,
     username: null,
+    notes: null,
     new: {
         title: "",
         body: "",       
@@ -25,13 +26,14 @@ const reducer = (state, action) => {
             newState = { ...state, ...action.payload };
             return newState;
             break;
-            case "logout":
+        case "logout":
                 newState = {...state, token: null, username: null};
                 window.localStorage.removeItem("auth");
                 return newState;
                 break;
-            case "appEntries":
-                newState = {...state, entries: action.payload};
+        case "getEntries":
+            
+                newState = { ...state, entries: action.payload };
                 return newState;
                 break;
         default:
