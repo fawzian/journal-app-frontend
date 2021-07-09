@@ -2,7 +2,7 @@ import React, { useContext , useReducer } from "react";
 
 // initial state
 const initialState = {
-    url: "http://journal-backend-fn.herokuapp.com",
+    url: "https://journal-backend-fn.herokuapp.com",
     token: null,
     username: null,
     entries: null,
