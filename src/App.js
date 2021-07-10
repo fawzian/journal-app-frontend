@@ -7,6 +7,7 @@ import Nav from "./components/nav";
 import Home from "./Pages/Home";
 import Auth from "./Pages/Auth";
 import Dashboard from "./Pages/Dashboard.jsx";
+import Footer from "./components/footer";
 import './App.css';
 
 
@@ -31,6 +32,7 @@ function App(props) {
         <Route path="/auth/:form" component={Auth}/>
         <Route path="/dashboard" component={Dashboard}/>
     </Switch>
+    <Footer />
     </div>
   );
 }
