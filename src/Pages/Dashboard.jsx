@@ -31,7 +31,8 @@ const loaded = () => {
     return(
 <div className="dashboard">
 <h1>{username}'s Journal Entries</h1>
-<Link to="/dashboard/new"><button>New Journal Entry</button></Link>
+<Link to="/dashboard/new"><button>&#x270E;
+</button></Link>
 <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getEntries={getEntries}/>}
 />
 <ul>
@@ -43,7 +44,7 @@ const loaded = () => {
             <button onClick={() => {
                 dispatch({type: "select", payload: entry})
                 props.history.push("/dashboard/edit")
-            }}>Edit Journal Entry</button>
+            }}>Edit</button>
 
 <button onClick={() => {
                 fetch(url + "/entries/" + entry.id, {
@@ -53,7 +54,7 @@ const loaded = () => {
                     }
                 })
                 .then(() => getEntries());
-            }}>Delete Journal Entry</button>
+            }}>Delete</button>
             
         </div>)
     )}

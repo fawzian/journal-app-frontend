@@ -26,6 +26,7 @@ function App(props) {
 
   return (
     <div className="App">
+      <div className="content-wrap">
       <Route path="/" component={Nav} />
     <Switch>
         <Route exact path="/" component={Home}/>
@@ -33,6 +34,7 @@ function App(props) {
         <Route path="/dashboard" component={Dashboard}/>
     </Switch>
     <Footer />
+    </div>
     </div>
   );
 }

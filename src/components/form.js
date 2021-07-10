@@ -48,7 +48,7 @@ const Form = (props) => {
         <div className="form" onSubmit={handleSubmit}>
             <form>
                 <input type="text" name="title" value={formData.title} onChange={handleChange}/>
-                <input type="text" name="body" value={formData.body} onChange={handleChange}/>
+                <input type="text" name="body" value={formData.body} onChange={handleChange} className="body-form"/>
                 <input type="submit" value={action} />
             </form>
         </div>
