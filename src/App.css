@@ -92,19 +92,35 @@ header nav div:hover{
 
 /* home */
 
+.home {
+  text-align: center;
+  padding-top: 15%;
+}
+
 .saying1 {
   font-size: 30px;
   font-weight: 100;
-
 }
 
-.saying2{
+.saying2 {
   font-size: 60px;
   font-weight: 200;
 }
 
 .cta {
-  font-size: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #c38d9e;
+  display: inline-block;
+  padding: 2%;
+
+}
+.cta:hover {
+  background-color: #c38d9e;
+  color: white;
+  display: inline-block;
+  padding: 2%;
 }
 
 .logo1 {
