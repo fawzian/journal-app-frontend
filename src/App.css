@@ -78,8 +78,19 @@ header nav div:hover{
   padding: 15%;
 }
 
-.auth form input, .form form input, button {
-  background-color: #c38d9e;
+.auth form input, .form form input{
+  background-color: #f5c7a9;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.button, button {
+  background-color: #e8a87c;
   color: white;
   padding: 8px;
   border-radius: 5px;
